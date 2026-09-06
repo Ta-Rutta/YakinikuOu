@@ -21,7 +21,7 @@ public:
 	void update() override
 	{
 		// 長方形を左クリックしたら
-		if (start_button.leftClicked());
+		if (start_button.leftClicked())
 		{
 			changeScene(U"Title");
 		}
