@@ -8,6 +8,6 @@ public:
 
 	void addMilage(double dist);
 
-	void getMilage();
+	double getMilage();
 };
 
