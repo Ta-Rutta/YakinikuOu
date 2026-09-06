@@ -3,14 +3,12 @@
 using App = SceneManager<String>;
 
 // タイトルシーン
-class TitleScene : public App::Scene
+class ResultScene : public App::Scene
 {
 public:
-	//スタートボタン
-	const Rect start_button{ 400, 300, 200, 100 };
 
 	//コンストラクタ
-	TitleScene(const InitData& init);
+	ResultScene(const InitData& init);
 
 	//更新関数
 	void update() override;
