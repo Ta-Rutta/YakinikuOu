@@ -15,7 +15,7 @@ RectF BoostItem::getCollision() {
 }
 
 void BoostItem::draw()const {
-	tex.draw(); //描画
+	hitBox(tex).draw(); //描画
 }
 
 void BoostItem::update() {

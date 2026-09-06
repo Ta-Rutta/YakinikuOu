@@ -15,10 +15,9 @@ RectF DownItem::getCollision() {
 }
 
 void DownItem::draw()const {
-	tex.draw(); //描画
+	hitBox(tex).draw(); //描画
 }
 
 void DownItem::update() {
-	draw();
 	hitBox = (pos, 30, 30) //位置の更新
 }
