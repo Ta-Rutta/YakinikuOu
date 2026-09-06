@@ -13,6 +13,6 @@ public:
 
 	void speedDown();
 
-	void checkSpeed();
+	double checkSpeed();
 };
 
