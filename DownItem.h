@@ -7,14 +7,11 @@ private:
 	Vec2 pos;//描画位置
 	Texture tex;//テクスチャ
 	RectF hitBox;//当たり判定用
-	Speed speed;//速さ
+	std::shared_ptr<Speed> speed; //アイテムのスピード
+
 
 public:
-	DownItem(Vec2 pos, Texture tex)
-		:pos(pos),tex(tex)
-	{
-
-	}
+	DownItem(Vec2 pos, Texture tex, std::shared_ptr<Speed> speed);
 
 	RectF getCollision();//当たり判定を返す
 
