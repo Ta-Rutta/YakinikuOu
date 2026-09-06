@@ -1,4 +1,6 @@
 ﻿#pragma once
+# include "Speed.h"
+
 class Item
 {
 public:
