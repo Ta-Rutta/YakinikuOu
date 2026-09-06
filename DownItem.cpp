@@ -4,7 +4,7 @@
 DownItem::DownItem(Vec2 pos, Texture tex, std::shared_ptr<Speed> speed)
 	: pos(pos), //描画位置
 	tex(tex),  //テクスチャ
-	speed(speed) //アイテムのスピード
+	speed(speed), //アイテムのスピード
 	hitBox{ RectF(pos, 30, 30) } //当たり判定用 サイズは仮置きです
 {
 
@@ -20,5 +20,5 @@ void DownItem::draw()const {
 
 void DownItem::update() {
 	pos.x -= speed->checkSpeed() * Scene::DeltaTime();
-	hitBox = (pos, 30, 30) //位置の更新
+	hitBox = RectF(pos, 30, 30);//位置の更新
 }
