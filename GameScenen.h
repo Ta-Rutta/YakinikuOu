@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿
+/*
+#pragma once
 # include "Speed.h"
 #include "ItemManager.h"
 # include "Tornade.h"
@@ -27,5 +29,28 @@ public:
 
 	void draw()const;
 
+};
+*/
+
+//仮で書いておく
+#pragma once
+
+using App = SceneManager<String>;
+
+// タイトルシーン
+class GameScenen : public App::Scene
+{
+public:
+	//スタートボタン
+	const Rect start_button{ 400, 300, 200, 100 };
+
+	//コンストラクタ
+	GameScenen(const InitData& init);
+
+	//更新関数
+	void update() override;
+
+	//描画関数
+	void draw() const override;
 };
 

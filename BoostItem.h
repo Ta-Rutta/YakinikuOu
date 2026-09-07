@@ -6,15 +6,10 @@ private:
 	Vec2 pos;//描画座標
 	Texture tex;//テクスチャ
 	RectF hitBox;//当たり判定用の四角
-	Speed speed;//速度
-
+	std::shared_ptr<Speed> speed;
 public:
-	BoostItem(Vec2 pos, Texture tex)
-		:pos(pos), tex(tex)
-	{
-
-	}
-
+	BoostItem(Vec2 pos, Texture tex, std::shared_ptr<Speed> speed);
+	
 	RectF getCollision();//当たり判定返す
 
 	void draw()const;//描画
