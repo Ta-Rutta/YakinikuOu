@@ -347,7 +347,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Tornade.h" />
-	<ClInclude Include="ResultScene.cpp" />
+	<ClInclude Include="ResultScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App\example\obj\blacksmith.obj">
