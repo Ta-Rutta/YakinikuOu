@@ -6,7 +6,6 @@ using App = SceneManager<String>;
 # include "TitleScene.h"
 # include "GameScenen.h"
 # include "ResultScene.h"
-# include "ResultScene.cpp"//これがないとうごかない??
 
 void Main()
 {
