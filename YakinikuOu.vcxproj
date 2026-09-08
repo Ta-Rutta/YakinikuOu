@@ -116,21 +116,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BoostItem.cpp" />
+    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DownItem.cpp" />
     <ClCompile Include="GameScenen.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemManager.cpp" />
+    <ClCompile Include="ItemSpawnController.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Milage.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Speed.cpp" />
     <ClCompile Include="stdafx.cpp" />
-	<ClCompile Include="ResultScene.cpp">
+    <ClCompile Include="ResultScene.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="Tornade.cpp" />
+    <ClCompile Include="TornadeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\engine\texture\box-shadow\128.png" />
@@ -337,17 +340,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoostItem.h" />
+    <ClInclude Include="CollisionSystem.h" />
+    <ClInclude Include="Common.h" />
     <ClInclude Include="DownItem.h" />
     <ClInclude Include="GameScenen.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemManager.h" />
+    <ClInclude Include="ItemSpawnController.h" />
     <ClInclude Include="Milage.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="Tornade.h" />
-	<ClInclude Include="ResultScene.h" />
+    <ClInclude Include="ResultScene.h" />
+    <ClInclude Include="TornadeManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App\example\obj\blacksmith.obj">
