@@ -7,8 +7,6 @@
 
 void Main()
 {
-	FontAsset::Register(U"TitleFont", FontMethod::MSDF, 48, Typeface::Bold);
-
 	// シーンマネージャーを作成
 	App manager;
 
