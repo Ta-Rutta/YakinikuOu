@@ -1,6 +1,5 @@
 ﻿#pragma once
-
-using App = SceneManager<String>;
+# include "Common.h"
 
 // タイトルシーン
 class TitleScene : public App::Scene
