@@ -7,6 +7,7 @@ class TitleScene : public App::Scene
 public:
 	//スタートボタン
 	const Rect start_button{ 400, 300, 200, 100 };
+	const Rect exit_button{ 100, 100, 200, 200 };
 
 	//コンストラクタ
 	TitleScene(const InitData& init);

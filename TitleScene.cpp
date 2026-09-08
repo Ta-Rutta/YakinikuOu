@@ -14,19 +14,18 @@ TitleScene::TitleScene(const InitData& init)
 void TitleScene::update()
 {
 	// ボタンが左クリックされたらシーン遷移
-	if (start_button.leftClicked())
-	{
-		// 次のシーンへ遷移（例: ゲーム本体シーンへ遷移する場合は U"Game" など）
-		changeScene(U"Game");
-	}
+	if (start_button.leftClicked()) changeScene(U"Game");
+
+	if (exit_button.leftClicked()) System::Exit();
 }
 
 // 描画関数
 void TitleScene::draw() const
 {
-	Scene::SetBackground(Palette::White);
+	Scene::SetBackground(Palette::Skyblue);
 
 	start_button.draw(Palette::Black);
+	exit_button.draw(Palette::Blue);
 
 	Print << U"Title";
 }
