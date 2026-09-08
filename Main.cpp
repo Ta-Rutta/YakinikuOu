@@ -1,10 +1,4 @@
 ﻿# include <Siv3D.hpp> // Siv3D v0.6.16
-
-struct GameData
-{
-	String name;//ユーザーネーム
-	double milage;//飛行距離
-};
 // ステートの型は String
 # include "Common.h"
 # include "TitleScene.h"
