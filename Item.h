@@ -11,5 +11,7 @@ public:
 	virtual void update() = 0;
 
 	virtual Vec2 getPos() = 0;
+
+	virtual void RunEffect() = 0;
 };
 
