@@ -7,10 +7,6 @@
 
 void Main()
 {
-	Window::Resize(1920, 1200);
-
-	FontAsset::Register(U"TitleFont", FontMethod::MSDF, 48, Typeface::Bold);
-
 	// シーンマネージャーを作成
 	App manager;
 
