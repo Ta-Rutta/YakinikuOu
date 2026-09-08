@@ -6,8 +6,10 @@ class TitleScene : public App::Scene
 {
 public:
 	//スタートボタン
-	const Rect start_button{ 400, 300, 200, 100 };
-	const Rect exit_button{ 100, 100, 200, 200 };
+	const Rect start_button{ Arg::center(400, 250), 500, 100 };
+	const Rect exit_button { Arg::center(400, 400), 425, 100 };
+
+	const Font font{ FontMethod::MSDF, 48 };
 
 	//コンストラクタ
 	TitleScene(const InitData& init);
