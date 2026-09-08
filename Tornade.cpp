@@ -20,5 +20,10 @@ RectF Tornade::getCollision()
 void Tornade::update()
 {
 	pos.x -= speed->checkSpeed() * Scene::DeltaTime();
-	hitBox = RectF{ pos,100,800 };
+	hitBox.pos = pos;
+}
+
+Vec2 Tornade::getPos()
+{
+	return pos;
 }

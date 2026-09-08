@@ -19,5 +19,7 @@ public:
 	RectF getCollision();//当たり判定返す
 
 	void update();//位置更新
+
+	Vec2 getPos();
 };
 

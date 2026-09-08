@@ -9,5 +9,7 @@ public:
 	virtual void draw()const = 0;
 
 	virtual void update() = 0;
+
+	virtual Vec2 getPos() = 0;
 };
 

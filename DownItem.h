@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Item.h"
 
-class DownItem
+class DownItem :public Item
 {
 private:
 	Vec2 pos;//描画位置
@@ -18,5 +18,7 @@ public:
 	void draw()const;//描画関数
 
 	void update();//位置更新
+
+	Vec2 getPos();//位置を返す
 };
 

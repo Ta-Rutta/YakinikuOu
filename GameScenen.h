@@ -1,56 +1,45 @@
-﻿
-/*
-#pragma once
+﻿#pragma once
+# include "Common.h"
 # include "Speed.h"
 #include "ItemManager.h"
-# include "Tornade.h"
+# include "TornadeManager.h"
 #include "Milage.h"
 #include "Player.h"
+#include "CollisionSystem.h"
+#include "ItemSpawnController.h"
 
-class GameScenen
-{
-private:
-	ItemManager itemManager; //アイテム管理クラス
-	Speed speed; //全体で統一させる速さ
-	Milage milage; //飛行距離
-	Tornade tornade;
-	Player player;
-
-public:
-	//プレイヤーとアイテムの当たり判定のみをここで判断
-	bool hitCheckItem();
-
-	//プレイヤーと竜巻の当たり判定のみをここで判断
-	bool hitCheckTornade();
-
-	void commitSpeed();
-
-	void update();
-
-	void draw()const;
-
-};
-*/
-
-//仮で書いておく
-#pragma once
-
-using App = SceneManager<String>;
-
-// タイトルシーン
 class GameScenen : public App::Scene
 {
-public:
-	//スタートボタン
-	const Rect start_button{ 400, 300, 200, 100 };
+private:
 
-	//コンストラクタ
+	std::shared_ptr<Speed> speed; //全体で統一させる速さ
+
+	ItemManager itemManager; //アイテム管理クラス
+
+	Milage milage; //飛行距離
+
+	TornadeManager tornadeManager;
+
+	Player player;
+
+	ItemSpawnController spawnController;
+
+public:
+
+    //コンストラクタ
 	GameScenen(const InitData& init);
 
-	//更新関数
+	//プレイヤーとアイテムの当たり判定のみをここで判断
+	void hitCheckItem();
+
+	//プレイヤーと竜巻の当たり判定のみをここで判断
+	void hitCheckTornade();
+
 	void update() override;
 
-	//描画関数
-	void draw() const override;
-};
+	void draw()const override;
 
+	//飛距離を計算してMailageクラスに渡す
+	void addMilage(double t);
+
+};

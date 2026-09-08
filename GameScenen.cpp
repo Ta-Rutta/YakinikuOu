@@ -5,27 +5,54 @@
 // コンストラクタ（親クラス IScene の初期化を行う）
 GameScenen::GameScenen(const InitData& init)
 	: IScene{ init }
+	, speed{ std::make_shared<Speed>() } // 1. 先に speed を生成
+	, itemManager{ speed }               // 2. 生成した speed を渡して itemManager を初期化
+	, tornadeManager{speed}                    // 3. tornade の初期化
+	, player{Vec2{200,400}}
 {
+	
 
 }
 
 // 更新関数
 void GameScenen::update()
 {
-	// ボタンが左クリックされたらシーン遷移
-	if (start_button.leftClicked())
-	{
-		// 次のシーンへ遷移（例: ゲーム本体シーンへ遷移する場合は U"Game" など）
-		changeScene(U"Result");
-	}
+	const double t = Scene::DeltaTime();
+
+	addMilage(t);
+
+	player.update();
+
+	itemManager.update();
+
+	tornadeManager.update();
+
+	spawnController.SpawnController(itemManager, milage);
+
 }
 
 // 描画関数
 void GameScenen::draw() const
 {
-	Scene::SetBackground(Palette::White);
+	Scene::SetBackground(Palette::Skyblue);
 
-	start_button.draw(Palette::Yellow);
+	player.draw();
+
+	itemManager.draw();
+
+	tornadeManager.draw();
 
 	Print << U"Game";
+}
+
+void GameScenen::hitCheckItem()
+{
+	
+}
+
+void GameScenen::addMilage(double t)
+{
+	double dist = speed->checkSpeed() * t;
+
+	milage.addMilage(dist);
 }
