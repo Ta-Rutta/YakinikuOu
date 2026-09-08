@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "BoostItem.h"
 #include "DownItem.h"
+#include "Player.h"
 
 
 class ItemManager
@@ -24,11 +25,14 @@ public:
 
 	void addDownItem();
 
-	void deleteItem();
+	//アイテムが削除される条件を追加
+	void deleteItem(Player& player);
 
 	void draw()const;
 
-	void update();
+	void update(Player& player);
 
+    //プレイヤーとの衝突確認
+	/*bool checkCollsion(Player& player);*/
 };
 

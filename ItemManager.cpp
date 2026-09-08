@@ -26,13 +26,19 @@ void ItemManager::addDownItem()
 }
 
 
-//画面外のアイテムを削除
-void ItemManager::deleteItem()
+//アイテムを削除するのはこのメソッド
+void ItemManager::deleteItem(Player& player)
 {
-	items.remove_if([](const std::unique_ptr<Item>& item)
+	items.remove_if([&player](const std::unique_ptr<Item>& item)
 		{
 			if (item->getPos().x < 0) // ※仕様に合わせて変更
-			{ 
+			{
+				return true;
+			}
+
+			if (player.getCollision(item->getCollision()))
+			{
+				item->RunEffect();
 				return true;
 			}
 			return false;
@@ -52,12 +58,25 @@ void ItemManager::draw()const
 
 
 
-void ItemManager::update()
+void ItemManager::update(Player& player)
 {
 
 	for (const auto& item : items)
 	{
 		item->update();
 	}
-	deleteItem();
+	deleteItem(player);
 }
+
+
+//bool ItemManager::checkCollsion(Player& player)
+//{
+//	for (const auto& item : items)
+//	{
+//		if (player.getCollision(item->getCollision()))
+//		{
+//
+//		}
+//	}
+//	
+//}
