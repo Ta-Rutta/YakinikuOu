@@ -2,14 +2,11 @@
 #include "BoostItem.h"
 #include "DownItem.h"
 
+
 class ItemManager
 {
 private:
-	Array<Item*> items;
-
-	RectF BoostItemBox;
-
-	RectF DownItemBox;
+	Array<std::unique_ptr<Item>> items;
 
 	std::shared_ptr<Speed> speed;
 
@@ -21,7 +18,8 @@ private:
 
 public:
 
-	//
+	ItemManager(std::shared_ptr<Speed> speed);
+
 	void addBoostItem();
 
 	void addDownItem();
