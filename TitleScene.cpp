@@ -16,6 +16,7 @@ void TitleScene::update()
 	// ボタンが左クリックされたらシーン遷移
 	if (start_button.leftClicked()) changeScene(U"Game");
 
+	// ボタンが左クリックされたらアプリを終了
 	if (exit_button.leftClicked()) System::Exit();
 }
 
