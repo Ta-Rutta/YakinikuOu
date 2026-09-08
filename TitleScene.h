@@ -12,6 +12,9 @@ public:
 	const Font button_font { 48, U"Assets/fonts/oshigo.otf" };
 	const Font title_font{ 48, U"Assets/fonts/craftmincho.otf" };
 
+	const Audio button{ U"Assets/sound-effect/button.mp3" };
+
+	bool exit_audio_playing_flag;
 	//コンストラクタ
 	TitleScene(const InitData& init);
 
