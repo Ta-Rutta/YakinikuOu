@@ -21,9 +21,11 @@ void GameScenen::update()
 
 	addMilage(t);
 
+	speed->update();
+
 	player.update();
 
-	itemManager.update();
+	itemManager.update(player);
 
 	tornadeManager.update();
 
