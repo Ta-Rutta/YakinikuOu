@@ -9,7 +9,8 @@ public:
 	const Rect start_button{ Arg::center(400, 250), 500, 100 };
 	const Rect exit_button { Arg::center(400, 400), 425, 100 };
 
-	const Font font{ FontMethod::MSDF, 48 };
+	const Font button_font { 48, U"App/Assets/fonts/craftmincho.otf" };
+	const Font title_font{ 48, U"Assets/fonts/oshigo.otf"};
 
 	//コンストラクタ
 	TitleScene(const InitData& init);
