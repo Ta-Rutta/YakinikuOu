@@ -31,6 +31,7 @@ void GameScenen::update()
 
 	spawnController.SpawnController(itemManager, milage);
 
+	hitCheckTornade();
 }
 
 // 描画関数
@@ -47,14 +48,18 @@ void GameScenen::draw() const
 	Print << U"Game";
 }
 
-void GameScenen::hitCheckItem()
-{
-	
-}
 
 void GameScenen::addMilage(double t)
 {
 	double dist = speed->checkSpeed() * t;
 
 	milage.addMilage(dist);
+}
+
+void GameScenen::hitCheckTornade()
+{
+	if (tornadeManager.collisionCheck(player))
+	{
+		changeScene(U"Result");
+	}
 }
