@@ -4,14 +4,16 @@
 Player::Player(Vec2 Pos_, std::shared_ptr<Speed> speed)
 	: Pos{ Pos_ }, //位置
 	Vel{ 250 }, //速度
-	PlayerRect{ RectF(Pos,30,10)},
+	PlayerRect{ RectF(Pos,100,100)},
+	indicatorRect{ RectF(Pos,100,100) },
 	speed {speed}
 {
 
 }
 
 void Player::update() {
-	PlayerRect = { Pos,30,10 };
+	PlayerRect = { Pos,100,100 };
+	indicatorRect = { Pos, 100, 100 };
 	move();
 }
 
@@ -24,7 +26,9 @@ bool Player::getCollision(const RectF& other) {
 }
 
 void Player::draw()const {	
-	PlayerRect.draw(); //プレイヤーの描画
+	PlayerRect(eagle).draw(); //プレイヤーの描画
+    try_drawing_indicator(speed->checkSpeed());
+	
 }
 
 
@@ -44,4 +48,10 @@ void Player::move() {
 		Pos.x -= 1 * Scene::DeltaTime();
 	}*/
 	// 左右移動
+}
+
+void Player::try_drawing_indicator(double player_speed) const {
+	if (player_speed < speed->get_player_game_over_speed()) {
+		indicatorRect.draw(Palette::Orange);
+	}
 }

@@ -14,6 +14,8 @@ private:
 
 	double t = 0;//時間計測
 
+	const double player_game_over_speed = 200;
+
 public:
 	void update();
 
@@ -22,5 +24,7 @@ public:
 	void speedDown();
 
 	double checkSpeed();
+
+	double get_player_game_over_speed();
 };
 
