@@ -12,9 +12,12 @@ public:
 	//今回のスコア表示をする
 	Font score;
 
-	const RectF retry_button{ 100,25,750,550 };
-
-	const RectF title_button{ 100,25,750,575 };
+	//リトライ用ボタン
+	const RectF retry_button{ 700,500,100,25 };
+	Font retry;
+	//タイトルに戻るボタン
+	const RectF title_button{ 700,550,100,25 };
+	Font title;
 
 	//コンストラクタ
 	ResultScene(const InitData& init);
