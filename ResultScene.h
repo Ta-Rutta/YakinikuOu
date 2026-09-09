@@ -18,6 +18,8 @@ public:
 	//タイトルに戻るボタン
 	const RectF title_button{ 700,550,100,25 };
 	Font title;
+	//効果音用変数
+	const Audio select;
 
 	//コンストラクタ
 	ResultScene(const InitData& init);
