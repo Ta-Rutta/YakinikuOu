@@ -1,10 +1,11 @@
 ﻿#include "stdafx.h"
 #include "Player.h"
 
-Player::Player(Vec2 Pos_)
+Player::Player(Vec2 Pos_, std::shared_ptr<Speed> speed)
 	: Pos{ Pos_ }, //位置
 	Vel{ 250 }, //速度
-	PlayerRect{ RectF(Pos,30,10) }
+	PlayerRect{ RectF(Pos,30,10)},
+	speed {speed}
 {
 
 }

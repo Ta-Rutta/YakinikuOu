@@ -8,7 +8,7 @@ GameScenen::GameScenen(const InitData& init)
 	, speed{ std::make_shared<Speed>() } // 1. 先に speed を生成
 	, itemManager{ speed }               // 2. 生成した speed を渡して itemManager を初期化
 	, tornadeManager{speed}                    // 3. tornade の初期化
-	, player{Vec2{200,400}}
+	, player{ Vec2{200,400}, speed}
 {
 	
 
