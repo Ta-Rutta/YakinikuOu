@@ -9,7 +9,11 @@ ResultScene::ResultScene(const InitData& init)
 	//名前
 	name(getData().name),
 	//スコア表示用の変数
-	score(50)
+	score(50),
+	//Retry用ボタンの文字
+	retry(15),
+	//Titleに戻る用ボタンの文字
+	title(12.5)
 {
 
 }
@@ -24,7 +28,7 @@ void ResultScene::update()
 // 描画関数
 void ResultScene::draw() const
 {
-	Scene::SetBackground(Palette::White);
+	Scene::SetBackground(Palette::Skyblue);
 
 	Print << U"Result";
 
@@ -39,7 +43,7 @@ void ResultScene::RetryButton()
 	if (retry_button.leftClicked()) {
 		changeScene(U"Game", 1s);
 	}
-
+	retry(U"リトライ").drawAt(750, 512.5);
 }
 
 void ResultScene::TitleButton()
@@ -48,5 +52,5 @@ void ResultScene::TitleButton()
 	if (title_button.leftClicked()) {
 		changeScene(U"Title", 1s);
 	}
-
+	title(U"タイトルに戻る").drawAt(750, 562.5);
 }
