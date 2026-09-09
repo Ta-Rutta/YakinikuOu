@@ -60,6 +60,7 @@ void GameScenen::hitCheckTornade()
 {
 	if (tornadeManager.collisionCheck(player))
 	{
+		getData().milage = milage.getMilage();
 		changeScene(U"Result");
 	}
 }
