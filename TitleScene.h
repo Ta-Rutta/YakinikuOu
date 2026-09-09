@@ -6,13 +6,13 @@ class TitleScene : public App::Scene
 {
 public:
 	//スタートボタン
-	const Rect start_button{ Arg::center(400, 250), 500, 100 };
-	const Rect exit_button { Arg::center(400, 400), 425, 100 };
+	const Rect start_button;
+	const Rect exit_button;
 
-	const Font button_font { 48, U"Assets/fonts/oshigo.otf" };
-	const Font title_font{ 48, U"Assets/fonts/craftmincho.otf" };
+	const Font button_font;
+	const Font title_font;
 
-	const Audio button{ U"Assets/sound-effect/button.mp3" };
+	const Audio button;
 
 	bool exit_audio_playing_flag;
 	//コンストラクタ

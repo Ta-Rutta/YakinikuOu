@@ -6,7 +6,12 @@
 // コンストラクタ（親クラス IScene の初期化を行う）
 TitleScene::TitleScene(const InitData& init)
 	: IScene{ init }
-, exit_audio_playing_flag (false)
+	, start_button({ Arg::center(400, 250), 500, 100 })
+	, exit_button({ Arg::center(400, 400), 425, 100 })
+	, button_font({ 48, U"Assets/fonts/oshigo.otf" })
+	, title_font({ 48, U"Assets/fonts/craftmincho.otf" })
+	, button({ U"Assets/sound-effect/button.mp3" })
+	, exit_audio_playing_flag(false)
 {
 	
 }
