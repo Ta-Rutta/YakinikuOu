@@ -7,6 +7,8 @@
 
 void Main()
 {
+
+
 	// シーンマネージャーを作成
 	App manager;
 
