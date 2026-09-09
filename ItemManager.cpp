@@ -31,7 +31,7 @@ void ItemManager::deleteItem(Player& player)
 {
 	items.remove_if([&player](const std::unique_ptr<Item>& item)
 		{
-			if (item->getPos().x < 0) // ※仕様に合わせて変更
+			if (item->getPos().x < -100) // ※仕様に合わせて変更
 			{
 				return true;
 			}

@@ -19,7 +19,7 @@ void BoostItem::draw()const {
 }
 
 void BoostItem::update() {
-	pos.x -= speed->checkSpeed() * Scene::DeltaTime();
+	pos.x -= speed->checkSpeed() * Scene::DeltaTime()*2;
 	hitBox.pos = pos;
 }
 

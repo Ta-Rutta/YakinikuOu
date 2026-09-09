@@ -19,7 +19,7 @@ void DownItem::draw()const {
 }
 
 void DownItem::update() {
-	pos.x -= speed->checkSpeed() * Scene::DeltaTime();
+	pos.x -= speed->checkSpeed() * Scene::DeltaTime()*2;
 	hitBox.pos = pos;
 }
 

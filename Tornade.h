@@ -7,12 +7,12 @@ private:
 
 	std::shared_ptr<Speed> speed;//スピード
 
-	Texture tex;//テクスチャ
+	const Texture tex;//テクスチャ
 
 	RectF hitBox;//当たり判定
 
 public:
-	Tornade(Vec2 pos, std::shared_ptr<Speed> speed);
+	Tornade(Vec2 pos, std::shared_ptr<Speed> speed,Texture tex);
 
 	void draw()const;//描画
 

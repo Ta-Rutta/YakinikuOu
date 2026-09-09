@@ -21,9 +21,9 @@ bool TornadeManager::collisionCheck(Player& player)
 //竜巻を生成し、配列に追加
 void TornadeManager::addTornade()
 {
-	Vec2 pos{ 1000,0 };
+	Vec2 pos{ 1000,-100 };
 
-	tornades.push_back(std::make_unique<Tornade>(pos, speed));
+	tornades.push_back(std::make_unique<Tornade>(pos, speed,TornadeTexture));
 }
 
 //画面外の竜巻を削除
@@ -31,7 +31,7 @@ void TornadeManager::deleteTornade()
 {
 	tornades.remove_if([](const std::unique_ptr<Tornade>& tornade)
 		{
-			if (tornade->getPos().x < 0) // ※仕様に合わせて変更
+			if (tornade->getPos().x < -100) // ※仕様に合わせて変更
 			{
 				return true;
 			}

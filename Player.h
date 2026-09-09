@@ -10,6 +10,7 @@ private:
 	RectF indicatorRect; //仮置きのアレ
 	std::shared_ptr<Speed> speed;
 	const Texture eagle{ U"Assets/image/eagle.png"};
+	double t = 0;
 public:
 	Player(Vec2 Pos_, std::shared_ptr<Speed> speed);//コンストラクタ
 
