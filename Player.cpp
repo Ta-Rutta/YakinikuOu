@@ -26,7 +26,7 @@ bool Player::getCollision(const RectF& other) {
 }
 
 void Player::draw()const {	
-	PlayerRect.draw(); //プレイヤーの描画
+	PlayerRect(eagle).draw(); //プレイヤーの描画
     try_drawing_indicator(speed->checkSpeed());
 	
 }
