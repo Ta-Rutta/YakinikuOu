@@ -9,7 +9,7 @@ private:
 
 	std::shared_ptr<Speed> speed;
 
-	const Texture TornadeTexture{ U"Assets/yoshidaViper.png" };
+	const Texture TornadeTexture{ U"Assets/image/tornado.png" };
 
 	double t = 0;
 public:

@@ -1,15 +1,18 @@
 ﻿#include "stdafx.h"
 #include "Tornade.h"
 
-Tornade::Tornade(Vec2 pos, std::shared_ptr<Speed> speed)
-	:pos(pos),speed(speed),hitBox(RectF{pos,100,800})
+Tornade::Tornade(Vec2 pos, std::shared_ptr<Speed> speed,Texture tex)
+	:pos(pos),
+	speed(speed),
+	hitBox(RectF{pos,400,800}),
+	tex(tex)
 {
 
 }
 
 void Tornade::draw()const
 {
-	hitBox.draw();
+	hitBox(tex).draw();
 }
 
 RectF Tornade::getCollision()

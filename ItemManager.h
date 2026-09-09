@@ -13,9 +13,9 @@ private:
 
 	Vec2 prePos;//1個前に生成したアイテムの座標
 
-	const Texture BoostItemTexture{ U"Assets/yoshidaViper.png" };
+	const Texture BoostItemTexture{ U"Assets/image/accelerate.png" };
 
-	const Texture DownItemTexture{ U"Assets/yoshidaWine.png" };
+	const Texture DownItemTexture{ U"Assets/image/slow-down.png" };
 
 public:
 
