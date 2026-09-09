@@ -24,6 +24,8 @@ private:
 
 	ItemSpawnController spawnController;
 
+	Audio music{ U"Assets/music/maou_bgm_cyber44.mp3" };
+
 public:
 
     //コンストラクタ

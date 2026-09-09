@@ -32,6 +32,8 @@ void GameScenen::update()
 	spawnController.SpawnController(itemManager, milage);
 
 	hitCheckTornade();
+
+	if (!music.isPlaying()) music.play();
 }
 
 // 描画関数
