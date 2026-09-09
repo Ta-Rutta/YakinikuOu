@@ -26,3 +26,7 @@ void Speed::speedDown(){
 double Speed::checkSpeed(){
 	return speed;
 }
+
+double Speed::get_player_game_over_speed() {
+	return player_game_over_speed;
+}
