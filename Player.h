@@ -1,12 +1,15 @@
 ﻿#pragma once
+#include "Speed.h"
+
 class Player
 {
 private:
 	Vec2 Pos; //位置
 	double Vel; //速度
 	RectF PlayerRect; //仮置きのプレイヤー
+	std::shared_ptr<Speed> speed;
 public:
-	Player(Vec2 Pos_); //コンストラクタ
+	Player(Vec2 Pos_, std::shared_ptr<Speed> speed);//コンストラクタ
 
 	void update();
 
