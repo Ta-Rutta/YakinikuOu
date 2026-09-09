@@ -29,6 +29,9 @@ public:
     //コンストラクタ
 	GameScenen(const InitData& init);
 
+	//プレイヤーとアイテムの当たり判定のみをここで判断
+	void hitCheckItem();
+
 	//プレイヤーと竜巻の当たり判定のみをここで判断
 	void hitCheckTornade();
 

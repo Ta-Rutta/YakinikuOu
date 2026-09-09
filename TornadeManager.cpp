@@ -8,26 +8,15 @@ TornadeManager::TornadeManager(std::shared_ptr<Speed> speed)
 }
 
 
-//竜巻とプレイヤーの当たり判定
-bool TornadeManager::collisionCheck(Player& player)
-{
-	for (const auto& tornade : tornades)
-	{
-		if (player.getCollision(tornade->getCollision()))return true;
-	}
-	return false;
-}
-
-
 //竜巻を生成し、配列に追加
 void TornadeManager::addTornade()
 {
-	Vec2 pos{ 1000,0 };
+	Vec2 pos{ 1000,Random(30,800) };
 
 	tornades.push_back(std::make_unique<Tornade>(pos, speed));
 }
 
-//画面外の竜巻を削除
+//画面外のアイテムを削除
 void TornadeManager::deleteTornade()
 {
 	tornades.remove_if([](const std::unique_ptr<Tornade>& tornade)
@@ -54,19 +43,8 @@ void TornadeManager::draw()const
 
 void TornadeManager::update()
 {
-	t += Scene::DeltaTime();
-
-	if (t > 10)
-	{
-		t = 0;
-		addTornade();
-	}
-
 	for (const auto& tornade : tornades)
 	{
 		tornade->update();
 	}
-
-	deleteTornade();
-
 }
