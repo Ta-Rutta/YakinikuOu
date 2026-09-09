@@ -20,5 +20,7 @@ public:
 	void update();//位置更新
 
 	Vec2 getPos();//位置を返す
+
+	void RunEffect();
 };
 

@@ -8,7 +8,7 @@ TornadeManager::TornadeManager(std::shared_ptr<Speed> speed)
 }
 
 
-//加速アイテムを生成し、配列に追加
+//竜巻を生成し、配列に追加
 void TornadeManager::addTornade()
 {
 	Vec2 pos{ 1000,Random(30,800) };
@@ -39,7 +39,6 @@ void TornadeManager::draw()const
 		tornade->draw();
 	}
 }
-
 
 
 void TornadeManager::update()

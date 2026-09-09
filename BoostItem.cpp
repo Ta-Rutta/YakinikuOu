@@ -27,3 +27,9 @@ Vec2 BoostItem::getPos()
 {
 	return pos;
 }
+
+
+void BoostItem::RunEffect()
+{
+	speed->speedUp();
+}

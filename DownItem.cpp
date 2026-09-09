@@ -27,3 +27,9 @@ Vec2 DownItem::getPos()
 {
 	return pos;
 }
+
+
+void DownItem::RunEffect()
+{
+	speed->speedDown();
+}
