@@ -4,7 +4,7 @@ class Speed
 private:
 	double speed=100;//速さ
 
-	double accelerate=100;//加速量
+	double accelerate=10;//加速量
 
 	double deceleration=-10;//減速量
 
