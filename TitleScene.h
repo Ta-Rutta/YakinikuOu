@@ -4,7 +4,7 @@
 // タイトルシーン
 class TitleScene : public App::Scene
 {
-public:
+private:
 	//スタートボタン
 	const Rect start_button;
 	const Rect exit_button;
@@ -12,9 +12,9 @@ public:
 	const Font button_font;
 	const Font title_font;
 
-	const Audio button;
-
 	bool exit_audio_playing_flag;
+
+public:
 	//コンストラクタ
 	TitleScene(const InitData& init);
 

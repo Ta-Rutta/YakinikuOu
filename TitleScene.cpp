@@ -10,7 +10,6 @@ TitleScene::TitleScene(const InitData& init)
 	, exit_button({ Arg::center(400, 400), 425, 100 })
 	, button_font({ 48, U"Assets/fonts/oshigo.otf" })
 	, title_font({ 48, U"Assets/fonts/craftmincho.otf" })
-	, button({ U"Assets/sound-effect/button.mp3" })
 	, exit_audio_playing_flag(false)
 {
 	
@@ -21,22 +20,23 @@ void TitleScene::update()
 {
 	// ボタンが左クリックされたらシーン遷移と音
 	if (start_button.leftClicked()) {
-		button.play();
+		AudioAsset(U"SE_ButtonClicked").playOneShot();
 		changeScene(U"Game");
 	}
-		
+
 
 	// ボタンが左クリックされたら音とフラグ
 	if (exit_button.leftClicked()) {
-		button.play();
+		AudioAsset(U"SE_ButtonClicked").playOneShot();
 		exit_audio_playing_flag = true;
 
 	}
 
 	//前のフレーム音が再生中で今のフレームには再生中ではないときに終了
-	if (exit_audio_playing_flag == true && !button.isPlaying()) { System::Exit(); Print << U"Exit"; }
+	if (exit_audio_playing_flag == true && !AudioAsset(U"SE_ButtonClicked").isPlaying())
+	{ System::Exit(); Print << U"Exit"; }
 
-	if (!button.isPlaying()) exit_audio_playing_flag = false;
+	if (!AudioAsset(U"SE_ButtonClicked").isPlaying()) exit_audio_playing_flag = false;
 
 	if (!button_font)
 	{

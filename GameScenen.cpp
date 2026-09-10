@@ -10,8 +10,9 @@ GameScenen::GameScenen(const InitData& init)
 	, tornadeManager{speed}                    // 3. tornade の初期化
 	, player{ Vec2{200,400}, speed}
 {
-	
-
+	// アセットを使用する
+	AudioAsset(U"BGM_GameScene").setVolume(0.2);
+	AudioAsset(U"BGM_GameScene").play();
 }
 
 // 更新関数
@@ -33,7 +34,6 @@ void GameScenen::update()
 
 	hitCheckTornade();
 
-	if (!music.isPlaying()) music.play();
 }
 
 // 描画関数
@@ -47,7 +47,6 @@ void GameScenen::draw() const
 
 	tornadeManager.draw();
 
-	Print << U"Game";
 }
 
 

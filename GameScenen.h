@@ -18,13 +18,11 @@ private:
 
 	Milage milage; //飛行距離
 
-	TornadeManager tornadeManager;
+	TornadeManager tornadeManager; //竜巻の管理クラス
 
-	Player player;
+	Player player; //プレイヤー
 
-	ItemSpawnController spawnController;
-
-	Audio music{ U"Assets/music/maou_bgm_cyber44.mp3" };
+	ItemSpawnController spawnController; //アイテムの生成管理クラス
 
 public:
 

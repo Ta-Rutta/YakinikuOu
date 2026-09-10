@@ -13,9 +13,7 @@ ResultScene::ResultScene(const InitData& init)
 	//Retry用ボタンの文字
 	retry(15),
 	//Titleに戻る用ボタンの文字
-	title(13),
-	//選択の効果音
-	select(U"Assets/sound-effect/button.mp3")
+	title(13)
 {
 
 }
@@ -36,25 +34,25 @@ void ResultScene::draw() const
 
 	score(U"{}m"_fmt(milage)).drawAt(400, 200);
 
-	
+	retry_button.draw(Palette::Black);
+	retry(U"リトライ").drawAt(750, 512.5);
+
+	title_button.draw(Palette::Black);
+	title(U"タイトルに戻る").drawAt(750, 562.5);
 }
 
 void ResultScene::RetryButton()
 {
-	retry_button.draw(Palette::Black);
 	if (retry_button.leftClicked()) {
-		select.play();
-		changeScene(U"Game", 1s);
+		changeScene(U"Game", 0.5s);
+		AudioAsset(U"SE_ButtonClicked").playOneShot();
 	}
-	retry(U"リトライ").drawAt(750, 512.5);
 }
 
 void ResultScene::TitleButton()
 {
-	title_button.draw(Palette::Black);
 	if (title_button.leftClicked()) {
-		select.play();
-		changeScene(U"Title", 1s);
-	}
-	title(U"タイトルに戻る").drawAt(750, 562.5);
+		changeScene(U"Title", 0.5s);
+		AudioAsset(U"SE_ButtonClicked").playOneShot();
+	}	
 }
