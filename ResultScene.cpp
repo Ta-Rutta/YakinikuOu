@@ -30,8 +30,6 @@ void ResultScene::draw() const
 {
 	Scene::SetBackground(Palette::Skyblue);
 
-	Print << U"Result";
-
 	score(U"{}m"_fmt(milage)).drawAt(400, 200);
 
 	retry_button.draw(Palette::Black);

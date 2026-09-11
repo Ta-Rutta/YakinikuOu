@@ -59,9 +59,10 @@ void GameScenen::addMilage(double t)
 
 void GameScenen::hitCheckTornade()
 {
-	if (tornadeManager.collisionCheck(player))
+	if (tornadeManager.collisionCheck(player) && speed->checkSpeed()<speed->get_player_game_over_speed())
 	{
 		getData().milage = milage.getMilage();
+		AudioAsset(U"BGM_GameScene").stop();
 		changeScene(U"Result");
 	}
 }
