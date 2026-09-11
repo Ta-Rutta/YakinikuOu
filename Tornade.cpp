@@ -22,7 +22,7 @@ RectF Tornade::getCollision()
 
 void Tornade::update()
 {
-	pos.x -= speed->checkSpeed() * Scene::DeltaTime();
+	pos.x -= speed->checkSpeed() * Scene::DeltaTime()*2;
 	hitBox.pos = pos;
 }
 
