@@ -31,7 +31,7 @@ void TornadeManager::deleteTornade()
 {
 	tornades.remove_if([](const std::unique_ptr<Tornade>& tornade)
 		{
-			if (tornade->getPos().x < -100) // ※仕様に合わせて変更
+			if (tornade->getPos().x < -200) // ※仕様に合わせて変更
 			{
 				return true;
 			}
@@ -56,6 +56,7 @@ void TornadeManager::update()
 
 	t += Scene::DeltaTime();
 
+	//5秒ごとに台風を生成
 	if (t > 5)
 	{
 		t = 0;

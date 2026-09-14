@@ -4,7 +4,7 @@
 // タイトルシーン
 class ResultScene : public App::Scene
 {
-public:
+private:
 	//Commomから受け取るデータ
 	String name;
 	double milage;
@@ -15,12 +15,12 @@ public:
 	//リトライ用ボタン
 	const RectF retry_button{ 700,500,100,25 };
 	Font retry;
+
 	//タイトルに戻るボタン
 	const RectF title_button{ 700,550,100,25 };
 	Font title;
-	//効果音用変数
-	const Audio select;
 
+public:
 	//コンストラクタ
 	ResultScene(const InitData& init);
 

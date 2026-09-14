@@ -31,5 +31,6 @@ Vec2 DownItem::getPos()
 
 void DownItem::RunEffect()
 {
+	AudioAsset(U"SE_SpeedDown").playOneShot();
 	speed->speedDown();
 }

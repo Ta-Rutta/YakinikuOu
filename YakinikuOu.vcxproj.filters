@@ -896,5 +896,8 @@
     <ClInclude Include="ItemSpawnController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AudioRegister.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

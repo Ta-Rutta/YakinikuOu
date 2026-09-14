@@ -3,6 +3,7 @@
 
 void Speed::update()
 {
+	
 	t += Scene::DeltaTime();
 
 	if (t > 0.1)

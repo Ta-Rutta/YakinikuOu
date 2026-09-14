@@ -1,5 +1,6 @@
 ﻿# include <Siv3D.hpp> // Siv3D v0.6.16
 // ステートの型は String
+# include "AudioRegister.h"
 # include "Common.h"
 # include "TitleScene.h"
 # include "GameScenen.h"
@@ -7,7 +8,8 @@
 
 void Main()
 {
-
+	//サウンドを一括登録
+	AudioRegister();
 
 	// シーンマネージャーを作成
 	App manager;
