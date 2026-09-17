@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "CollisionSystem.h"
 #include "ItemSpawnController.h"
+#include "BackGround.h"
 
 class GameScenen : public App::Scene
 {
@@ -23,6 +24,8 @@ private:
 	Player player; //プレイヤー
 
 	ItemSpawnController spawnController; //アイテムの生成管理クラス
+
+	BackGround backGraund;
 
 public:
 

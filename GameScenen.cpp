@@ -8,7 +8,8 @@ GameScenen::GameScenen(const InitData& init)
 	, speed{ std::make_shared<Speed>() } // 1. 先に speed を生成
 	, itemManager{ speed }               // 2. 生成した speed を渡して itemManager を初期化
 	, tornadeManager{speed}                    // 3. tornade の初期化
-	, player{ Vec2{200,400}, speed}
+	, player{ Vec2{100,Scene::Height()/2}, speed}
+	, backGraund{speed}
 {
 	// アセットを使用する
 	AudioAsset(U"BGM_GameScene").setVolume(0.2);
@@ -28,24 +29,25 @@ void GameScenen::update()
 
 	itemManager.update(player);
 
-	tornadeManager.update();
+	spawnController.SpawnController(itemManager, milage,speed->checkSpeed());
 
-	spawnController.SpawnController(itemManager, milage);
+	//hitCheckTornade();
 
-	hitCheckTornade();
-
+	backGraund.update();
 }
 
 // 描画関数
 void GameScenen::draw() const
 {
-	Scene::SetBackground(Palette::Skyblue);
+	Scene::Rect().draw(Arg::top = ColorF{ 0.05, 0.35, 0.75 },Arg::bottom = ColorF{ 0.4, 0.75, 0.95 });
+
+	backGraund.draw();
 
 	player.draw();
 
 	itemManager.draw();
 
-	tornadeManager.draw();
+	
 
 }
 
@@ -57,12 +59,12 @@ void GameScenen::addMilage(double t)
 	milage.addMilage(dist);
 }
 
-void GameScenen::hitCheckTornade()
-{
-	if (tornadeManager.collisionCheck(player) && speed->checkSpeed()<speed->get_player_game_over_speed())
-	{
-		getData().milage = milage.getMilage();
-		AudioAsset(U"BGM_GameScene").stop();
-		changeScene(U"Result");
-	}
-}
+//void GameScenen::hitCheckTornade()
+//{
+//	if (tornadeManager.collisionCheck(player) && speed->checkSpeed()<speed->get_player_game_over_speed())
+//	{
+//		getData().milage = milage.getMilage();
+//		AudioAsset(U"BGM_GameScene").stop();
+//		changeScene(U"Result");
+//	}
+//}
