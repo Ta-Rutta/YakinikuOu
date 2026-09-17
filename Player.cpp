@@ -3,20 +3,18 @@
 
 Player::Player(Vec2 Pos_, std::shared_ptr<Speed> speed)
 	: Pos{ Pos_ }, //位置
-	Vel{ 300 }, //速度
-	PlayerRect{ RectF(Pos,100,100)},
-	indicatorRect{ RectF(Pos,100,100) },
+	Vel{ 400 }, //速度
+	PlayerRect{ RectF(Pos,150,150)},
 	speed {speed}
 {
 
 }
 
 void Player::update() {
-	PlayerRect = { Pos,100,100 };
-	indicatorRect = { Pos, 100, 100 };
 	move();
 	t += Scene::DeltaTime();
 	if (t > 1)t = 0;
+	
 }
 
 double Player::getVel() {
@@ -36,20 +34,18 @@ void Player::draw()const {
 
 
 void Player::move() {
+
 	if (KeyW.pressed() || KeyUp.pressed()) {
-		Pos.y -= Vel * Scene::DeltaTime();
+		PlayerRect.y -= Vel * Scene::DeltaTime()*3;
 	}
 	if (KeyS.pressed() || KeyDown.pressed()) {
-		Pos.y += Vel * Scene::DeltaTime();
+		PlayerRect.y += Vel * Scene::DeltaTime()*3;
 	}
 
-	/*if (KeyD.pressed() || KeyRight.pressed()) {
-		Pos.x += 1*Scene::DeltaTime();
-	}
-	if (KeyA.pressed() || KeyLeft.pressed()) {
-		Pos.x -= 1 * Scene::DeltaTime();
-	}*/
-	// 左右移動
+	if (PlayerRect.y < 200)PlayerRect.y = 200;
+	if (PlayerRect.y > Scene::Height() - 200)PlayerRect.y = Scene::Height() - 200;
+	
+
 }
 
 void Player::try_drawing_indicator(double player_speed) const {
