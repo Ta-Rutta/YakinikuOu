@@ -21,9 +21,9 @@ public:
 
 	ItemManager(std::shared_ptr<Speed> speed);
 
-	void addBoostItem();
+	void addBoostItem(double y);
 
-	void addDownItem();
+	void addDownItem(double y);
 
 	//アイテムが削除される条件を追加
 	void deleteItem(Player& player);

@@ -9,18 +9,18 @@ ItemManager::ItemManager(std::shared_ptr<Speed> speed)
 
 
 //加速アイテムを生成し、配列に追加
-void ItemManager::addBoostItem()
+void ItemManager::addBoostItem(double y)
 {
-	Vec2 pos{ 1000,Random(0,500) };
+	Vec2 pos{ Scene::Width()+100,y};
 
 	items.push_back(std::make_unique<BoostItem>(pos, BoostItemTexture, speed));
 }
 
 
 //減速アイテムを生成し、配列に追加
-void ItemManager::addDownItem()
+void ItemManager::addDownItem(double y)
 {
-	Vec2 pos{ 1000,Random(0,500) };
+	Vec2 pos{ Scene::Width() + 100,y };
 
 	items.push_back(std::make_unique<DownItem>(pos, DownItemTexture, speed));
 }
