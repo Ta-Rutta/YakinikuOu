@@ -1,6 +1,7 @@
 ﻿# include <Siv3D.hpp> // Siv3D v0.6.16
 // ステートの型は String
 # include "AudioRegister.h"
+# include "ImageRegister.h"
 # include "Common.h"
 # include "TitleScene.h"
 # include "GameScenen.h"
@@ -8,8 +9,14 @@
 
 void Main()
 {
+	// フルスクリーンモードにする
+	Window::Resize(1920, 1200);
+	Scene::SetResizeMode(ResizeMode::Actual); // シーンサイズ = ウィンドウサイズ に同期
+
 	//サウンドを一括登録
 	AudioRegister();
+
+	ImageRegister();
 
 	// シーンマネージャーを作成
 	App manager;
