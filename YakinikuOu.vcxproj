@@ -120,6 +120,7 @@
     <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DownItem.cpp" />
     <ClCompile Include="GameScenen.cpp" />
+    <ClCompile Include="Hp.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="ItemSpawnController.cpp" />
@@ -347,12 +348,14 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="DownItem.h" />
     <ClInclude Include="GameScenen.h" />
+    <ClInclude Include="Hp.h" />
     <ClInclude Include="ImageRegister.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemManager.h" />
     <ClInclude Include="ItemSpawnController.h" />
     <ClInclude Include="Milage.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ReadOnlySpeed.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TitleScene.h" />

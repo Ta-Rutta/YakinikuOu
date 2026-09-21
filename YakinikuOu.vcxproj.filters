@@ -136,6 +136,15 @@
     <Filter Include="Resource Files\engine\font\min">
       <UniqueIdentifier>{1b103960-f11a-4515-b4f1-f59333ce00d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Register">
+      <UniqueIdentifier>{1500784d-45c7-4367-bb55-cef4a75486e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Items">
+      <UniqueIdentifier>{9e5c0e49-0633-4399-a97b-b19b7445446c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Player">
+      <UniqueIdentifier>{0fea6ff1-0f8a-457b-b398-ee12ee95f40b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -187,6 +196,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BackGround.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -857,19 +869,7 @@
     <ClInclude Include="TitleScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Item.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameScenen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BoostItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DownItem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Speed.h">
@@ -879,9 +879,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Milage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResultScene.h">
@@ -896,17 +893,38 @@
     <ClInclude Include="CollisionSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ItemSpawnController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioRegister.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BackGround.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ImageRegister.h">
+    <ClInclude Include="ReadOnlySpeed.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioRegister.h">
+      <Filter>Header Files\Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageRegister.h">
+      <Filter>Header Files\Register</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemManager.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemSpawnController.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="DownItem.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="BoostItem.h">
+      <Filter>Header Files\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Hp.h">
+      <Filter>Header Files\Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
