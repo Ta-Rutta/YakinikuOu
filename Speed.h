@@ -1,5 +1,7 @@
 ﻿#pragma once
-class Speed
+#include "ReadOnlySpeed.h"
+
+class Speed:public ReadOnlySpeed
 {
 private:
 	double speed=200;//速さ
@@ -23,8 +25,8 @@ public:
 
 	void speedDown();
 
-	double checkSpeed();
+	double checkSpeed()const;
 
-	double get_player_game_over_speed();
+	
 };
 

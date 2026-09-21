@@ -24,10 +24,8 @@ void Speed::speedDown(){
 	speed += deceleration;
 }
 
-double Speed::checkSpeed(){
+double Speed::checkSpeed()const{
 	return speed;
 }
 
-double Speed::get_player_game_over_speed() {
-	return player_game_over_speed;
-}
+
