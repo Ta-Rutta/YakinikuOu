@@ -1,7 +1,7 @@
 ﻿#include "stdafx.h"
 #include "BackGround.h"
 
-BackGround::BackGround(std::shared_ptr<Speed> speed)
+BackGround::BackGround(std::shared_ptr<const ReadOnlySpeed> speed)
 	:speed(speed),
 	small_mountainL(RectF{ Vec2{0,Scene::Height()-500},1920,1200 }),
 	small_mountainR(RectF{ Vec2{Scene::Width(),Scene::Height() - 500},1920,1200 }),
@@ -40,6 +40,5 @@ void BackGround::draw()const
 	small_mountainL(TextureAsset(U"small_mountain")).draw();
 	small_mountainR(TextureAsset(U"small_mountain")).draw();
 	sun(TextureAsset(U"sun")).draw();
-	Print << speed->checkSpeed();
 	UIBar.draw(Palette::Lightgreen);
 }

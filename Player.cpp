@@ -1,9 +1,9 @@
 ﻿#include "stdafx.h"
 #include "Player.h"
 
-Player::Player(Vec2 Pos_, std::shared_ptr<Speed> speed)
+Player::Player(Vec2 Pos_, std::shared_ptr<const ReadOnlySpeed> speed)
 	: Pos{ Pos_ }, //位置
-	Vel{ 400 }, //速度
+	Vel{ 500 }, //速度
 	PlayerRect{ RectF(Pos,150,150)},
 	speed {speed}
 {
@@ -49,12 +49,11 @@ void Player::move() {
 }
 
 void Player::try_drawing_indicator(double player_speed) const {
-	if (player_speed < speed->get_player_game_over_speed()) {
-		
+	
 		if (t < 0.5)
 		{
 			PlayerRect(eagle).draw(ColorF(1, 0, 0, 0.5));
 			
 		}
-	}
+	
 }

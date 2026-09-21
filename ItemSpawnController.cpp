@@ -1,12 +1,20 @@
 ﻿#include "stdafx.h"
 #include "ItemSpawnController.h"
 
-void ItemSpawnController::SpawnController(ItemManager& manager, Milage& milage,double speed)
+ItemSpawnController::ItemSpawnController()
+	:spawnTime(1.2)
 {
-	
+
+}
+
+void ItemSpawnController::SpawnController(ItemManager& manager, Milage& milage, std::shared_ptr<const ReadOnlySpeed> speed)
+{
+	//スポーン時間に補正値を加算することで揺らぎを与える
 	t += Scene::DeltaTime();
 
-	spawnTime = 1.2-(((speed/500)/5.0));
+	spawnTime = 1.2-(((speed->checkSpeed()/500)/5.0));
+
+	spawnTime *= Random(1.0, 1.3);
 
 	if (t>spawnTime)
 	{
@@ -15,7 +23,7 @@ void ItemSpawnController::SpawnController(ItemManager& manager, Milage& milage,d
 		std::random_device rd; // 非決定的な乱数生成器
 		std::default_random_engine engine(rd()); // 決定的な乱数生成器
 		std::shuffle(lane.begin(), lane.end(), engine);
-
+		
 		if (ItemAmount == 0)
 		{
 			manager.addBoostItem(lane[0]);

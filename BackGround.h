@@ -4,7 +4,7 @@
 class BackGround
 {
 private:
-	std::shared_ptr<Speed> speed;
+	std::shared_ptr<const ReadOnlySpeed> speed;
 	RectF small_mountainL;
 	RectF small_mountainR;
 
@@ -13,12 +13,12 @@ private:
 
 	RectF UIBar{ Vec2{0,Scene::Height() - 200},Scene::Width(),Scene::Height() };
 
-	RectF sun{ Vec2{Scene::Width() - 150,Scene::Height() - 800},100,100 };
+	RectF sun{ Vec2{Scene::Width() - 150,Scene::Height() - 1000},100,100 };
 
 	const double textureWidth = Scene::Width();
 
 public:
-	BackGround(std::shared_ptr<Speed> speed);
+	BackGround(std::shared_ptr<const ReadOnlySpeed> speed);
 
 	void update();
 
