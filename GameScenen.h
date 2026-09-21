@@ -30,10 +30,10 @@ private:
 public:
 
     //コンストラクタ
-	GameScenen(const InitData& init);
+	explicit GameScenen(const InitData& init);
 
 	//プレイヤーと竜巻の当たり判定のみをここで判断
-	void hitCheckTornade();
+	//void hitCheckTornade();
 
 	void update() override;
 

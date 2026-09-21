@@ -29,11 +29,17 @@ void GameScenen::update()
 
 	itemManager.update(player);
 
-	spawnController.SpawnController(itemManager, milage,speed->checkSpeed());
+	spawnController.SpawnController(itemManager, milage,speed);
 
 	//hitCheckTornade();
 
 	backGraund.update();
+
+	//デバック用処理
+	if (KeyA.down())
+	{
+		speed->speedUp();
+	}
 }
 
 // 描画関数
