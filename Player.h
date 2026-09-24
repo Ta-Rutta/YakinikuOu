@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Speed.h"
-# include "Hp.h"
 
 class Player
 {
@@ -10,8 +9,6 @@ private:
 	double Vel; //速度
 
 	RectF PlayerRect; //仮置きのプレイヤー
-
-	Hp ho; // プレイヤーのHp
 
 	std::shared_ptr<const ReadOnlySpeed> speed;
 

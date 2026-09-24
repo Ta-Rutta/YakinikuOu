@@ -35,11 +35,19 @@ void Player::draw()const {
 
 void Player::move() {
 
-	if (KeyW.pressed() || KeyUp.pressed()) {
+	if (KeyW.pressed()) {
 		PlayerRect.y -= Vel * Scene::DeltaTime()*3;
 	}
-	if (KeyS.pressed() || KeyDown.pressed()) {
+	if (KeyS.pressed()) {
 		PlayerRect.y += Vel * Scene::DeltaTime()*3;
+	}
+	if (KeyUp.pressed())
+	{
+		PlayerRect.y -= Vel * Scene::DeltaTime()*2;
+	}
+	if (KeyDown.pressed())
+	{
+		PlayerRect.y += Vel * Scene::DeltaTime()*2;
 	}
 
 	if (PlayerRect.y < 200)PlayerRect.y = 200;
