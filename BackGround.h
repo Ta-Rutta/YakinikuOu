@@ -1,10 +1,14 @@
 ﻿#pragma once
 # include "Speed.h"
+# include "Hp.h"
 
 class BackGround
 {
 private:
 	std::shared_ptr<const ReadOnlySpeed> speed;
+
+	std::shared_ptr<const IHpReadOnly> hp;
+
 	RectF small_mountainL;
 	RectF small_mountainR;
 
@@ -18,7 +22,7 @@ private:
 	const double textureWidth = Scene::Width();
 
 public:
-	BackGround(std::shared_ptr<const ReadOnlySpeed> speed);
+	BackGround(std::shared_ptr<const ReadOnlySpeed> speed, std::shared_ptr<const IHpReadOnly> hp);
 
 	void update();
 
@@ -27,5 +31,7 @@ public:
 	void BigMountainUpdate();
 
 	void draw()const;
+
+	void drawHp()const;
 };
 
