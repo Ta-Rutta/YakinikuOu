@@ -11,6 +11,8 @@ void Main()
 {
 	// フルスクリーンモードにする
 	Window::Resize(1920, 1200);
+	// シーンを 1600x1200 にリサイズ
+	Scene::Resize(1920, 1200);
 	Scene::SetResizeMode(ResizeMode::Actual); // シーンサイズ = ウィンドウサイズ に同期
 
 	//サウンドを一括登録
