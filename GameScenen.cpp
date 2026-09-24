@@ -6,13 +6,14 @@
 GameScenen::GameScenen(const InitData& init)
 	: IScene{ init }
 	, speed{ std::make_shared<Speed>() } // 1. 先に speed を生成
+	, hp{ std::make_shared<Hp>() } // 1. 先に speed を生成
 	, itemManager{ speed }               // 2. 生成した speed を渡して itemManager を初期化
-	, tornadeManager{speed}                    // 3. tornade の初期化
-	, player{ Vec2{100,Scene::Height()/2}, speed}
-	, backGraund{speed}
+	, tornadeManager{ speed }                    // 3. tornade の初期化
+	, player{ Vec2{100,Scene::Height() / 2}, speed }
+	, backGraund{ speed,hp }
 {
 	// アセットを使用する
-	AudioAsset(U"BGM_GameScene").setVolume(0.2);
+	AudioAsset(U"BGM_GameScene").setVolume(0.02);
 	AudioAsset(U"BGM_GameScene").play();
 }
 
@@ -52,8 +53,6 @@ void GameScenen::draw() const
 	player.draw();
 
 	itemManager.draw();
-
-	
 
 }
 
