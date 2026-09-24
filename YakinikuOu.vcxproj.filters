@@ -189,9 +189,6 @@
     <ClCompile Include="TornadeManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ItemSpawnController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -890,13 +887,7 @@
     <ClInclude Include="Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="BackGround.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ReadOnlySpeed.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AudioRegister.h">

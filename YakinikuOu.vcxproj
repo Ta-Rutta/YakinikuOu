@@ -117,7 +117,6 @@
   <ItemGroup>
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="BoostItem.cpp" />
-    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DownItem.cpp" />
     <ClCompile Include="GameScenen.cpp" />
     <ClCompile Include="Hp.cpp" />
@@ -344,7 +343,6 @@
     <ClInclude Include="AudioRegister.h" />
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="BoostItem.h" />
-    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DownItem.h" />
     <ClInclude Include="GameScenen.h" />
@@ -355,7 +353,6 @@
     <ClInclude Include="ItemSpawnController.h" />
     <ClInclude Include="Milage.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="ReadOnlySpeed.h" />
     <ClInclude Include="Speed.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TitleScene.h" />
