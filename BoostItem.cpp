@@ -31,6 +31,7 @@ Vec2 BoostItem::getPos()
 
 void BoostItem::RunEffect()
 {
+	AudioAsset(U"SE_SpeedUp").setVolume(0.1);
 	AudioAsset(U"SE_SpeedUp").playOneShot();
 	speed->speedUp();
 }
