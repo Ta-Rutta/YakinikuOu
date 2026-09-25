@@ -5,9 +5,19 @@
 class ItemSpawnController
 {
 private:
-	double spawnTime = 1;
+	double spawnTime;
+
 	double t = 0;
+
+	Array<int> lane{ 200,400,600,800 };
+
+	std::shared_ptr<const ReadOnlySpeed> speed;
+
 public:
-	void SpawnController(ItemManager& manager, Milage& milage);
+	ItemSpawnController();
+
+	void SpawnController(ItemManager& manager, Milage& milage, std::shared_ptr<const ReadOnlySpeed> speed);
+
+	
 };
 

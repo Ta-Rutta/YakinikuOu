@@ -115,10 +115,11 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="BoostItem.cpp" />
-    <ClCompile Include="CollisionSystem.cpp" />
     <ClCompile Include="DownItem.cpp" />
     <ClCompile Include="GameScenen.cpp" />
+    <ClCompile Include="Hp.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemManager.cpp" />
     <ClCompile Include="ItemSpawnController.cpp" />
@@ -340,11 +341,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AudioRegister.h" />
+    <ClInclude Include="BackGround.h" />
     <ClInclude Include="BoostItem.h" />
-    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="DownItem.h" />
     <ClInclude Include="GameScenen.h" />
+    <ClInclude Include="Hp.h" />
+    <ClInclude Include="ImageRegister.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="ItemManager.h" />
     <ClInclude Include="ItemSpawnController.h" />

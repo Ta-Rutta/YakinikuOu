@@ -5,7 +5,7 @@ BoostItem::BoostItem(Vec2 pos, Texture tex, std::shared_ptr<Speed> speed)
 	: pos(pos), //描画位置
 	tex(tex),  //テクスチャ
 	speed(speed), //アイテムのスピード
-	hitBox{ RectF(pos, 100, 100) } //当たり判定用 サイズは仮置きです
+	hitBox{ RectF(pos, 110, 110) } //当たり判定用 サイズは仮置きです
 {
 
 }
@@ -31,6 +31,7 @@ Vec2 BoostItem::getPos()
 
 void BoostItem::RunEffect()
 {
+	AudioAsset(U"SE_SpeedUp").setVolume(0.1);
 	AudioAsset(U"SE_SpeedUp").playOneShot();
 	speed->speedUp();
 }

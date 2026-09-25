@@ -1,22 +1,20 @@
 ﻿#include "stdafx.h"
 #include "Player.h"
 
-Player::Player(Vec2 Pos_, std::shared_ptr<Speed> speed)
+Player::Player(Vec2 Pos_, std::shared_ptr<const ReadOnlySpeed> speed)
 	: Pos{ Pos_ }, //位置
-	Vel{ 300 }, //速度
-	PlayerRect{ RectF(Pos,100,100)},
-	indicatorRect{ RectF(Pos,100,100) },
+	Vel{ 500 }, //速度
+	PlayerRect{ RectF(Pos,150,150)},
 	speed {speed}
 {
 
 }
 
 void Player::update() {
-	PlayerRect = { Pos,100,100 };
-	indicatorRect = { Pos, 100, 100 };
 	move();
 	t += Scene::DeltaTime();
 	if (t > 1)t = 0;
+	
 }
 
 double Player::getVel() {
@@ -36,29 +34,34 @@ void Player::draw()const {
 
 
 void Player::move() {
-	if (KeyW.pressed() || KeyUp.pressed()) {
-		Pos.y -= Vel * Scene::DeltaTime();
+
+	if (KeyW.pressed()) {
+		PlayerRect.y -= Vel * Scene::DeltaTime()*3;
 	}
-	if (KeyS.pressed() || KeyDown.pressed()) {
-		Pos.y += Vel * Scene::DeltaTime();
+	if (KeyS.pressed()) {
+		PlayerRect.y += Vel * Scene::DeltaTime()*3;
+	}
+	if (KeyUp.pressed())
+	{
+		PlayerRect.y -= Vel * Scene::DeltaTime()*2;
+	}
+	if (KeyDown.pressed())
+	{
+		PlayerRect.y += Vel * Scene::DeltaTime()*2;
 	}
 
-	/*if (KeyD.pressed() || KeyRight.pressed()) {
-		Pos.x += 1*Scene::DeltaTime();
-	}
-	if (KeyA.pressed() || KeyLeft.pressed()) {
-		Pos.x -= 1 * Scene::DeltaTime();
-	}*/
-	// 左右移動
+	if (PlayerRect.y < 200)PlayerRect.y = 200;
+	if (PlayerRect.y > Scene::Height() - 200)PlayerRect.y = Scene::Height() - 200;
+	
+
 }
 
 void Player::try_drawing_indicator(double player_speed) const {
-	if (player_speed < speed->get_player_game_over_speed()) {
-		
+	
 		if (t < 0.5)
 		{
 			PlayerRect(eagle).draw(ColorF(1, 0, 0, 0.5));
 			
 		}
-	}
+	
 }

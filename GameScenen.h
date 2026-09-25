@@ -1,18 +1,21 @@
 ﻿#pragma once
-# include "Common.h"
-# include "Speed.h"
+#include "Common.h"
+#include "Speed.h"
 #include "ItemManager.h"
-# include "TornadeManager.h"
+#include "TornadeManager.h"
 #include "Milage.h"
 #include "Player.h"
-#include "CollisionSystem.h"
 #include "ItemSpawnController.h"
+#include "BackGround.h"
+#include "Hp.h"
 
 class GameScenen : public App::Scene
 {
 private:
 
 	std::shared_ptr<Speed> speed; //全体で統一させる速さ
+
+	std::shared_ptr<Hp> hp; //全体で統一させる速さ
 
 	ItemManager itemManager; //アイテム管理クラス
 
@@ -24,13 +27,15 @@ private:
 
 	ItemSpawnController spawnController; //アイテムの生成管理クラス
 
+	BackGround backGraund;
+
 public:
 
     //コンストラクタ
-	GameScenen(const InitData& init);
+	explicit GameScenen(const InitData& init);
 
 	//プレイヤーと竜巻の当たり判定のみをここで判断
-	void hitCheckTornade();
+	//void hitCheckTornade();
 
 	void update() override;
 

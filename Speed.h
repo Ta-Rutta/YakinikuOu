@@ -1,8 +1,20 @@
 ﻿#pragma once
-class Speed
+
+class ReadOnlySpeed
+{
+public:
+	virtual ~ReadOnlySpeed() = default;
+
+	// 値を取得するメソッドのみを定義 (const メソッド)
+	virtual double checkSpeed()const = 0;
+
+
+};
+
+class Speed:public ReadOnlySpeed
 {
 private:
-	double speed=150;//速さ
+	double speed=200;//速さ
 
 	double accelerate=30;//加速量
 
@@ -10,12 +22,12 @@ private:
 
 	const double minSpeed = 80;//速度の最小値
 
-	const double maxSpeed = 250;//速度の最大値
+	const double maxSpeed = 300;//速度の最大値
 
 	double t = 0;//時間計測
 
 	const double player_game_over_speed = 150;//竜巻を通過できない速度
-
+	
 public:
 	void update();
 
@@ -23,8 +35,8 @@ public:
 
 	void speedDown();
 
-	double checkSpeed();
+	double checkSpeed()const;
 
-	double get_player_game_over_speed();
+	
 };
 

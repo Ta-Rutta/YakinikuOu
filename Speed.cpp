@@ -6,14 +6,14 @@ void Speed::update()
 	
 	t += Scene::DeltaTime();
 
-	if (t > 0.1)
+	if (t > 1)
 	{
 		t = 0;
-		speed -= 0.1;
+		speed -= 2;
 	}
 
 	if (speed < minSpeed)speed = minSpeed;
-	if (speed > maxSpeed)speed = maxSpeed;
+	//if (speed > maxSpeed)speed = maxSpeed;
 }
 
 void Speed::speedUp(){
@@ -24,10 +24,8 @@ void Speed::speedDown(){
 	speed += deceleration;
 }
 
-double Speed::checkSpeed(){
+double Speed::checkSpeed()const{
 	return speed;
 }
 
-double Speed::get_player_game_over_speed() {
-	return player_game_over_speed;
-}
+
